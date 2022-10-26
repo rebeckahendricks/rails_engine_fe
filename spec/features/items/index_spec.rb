@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Items Index' do
+RSpec.describe 'Items Index', :vcr do
   describe 'As a visitor' do
     describe 'When I visit "/items"' do
       before :each do
@@ -17,17 +17,21 @@ RSpec.describe 'Items Index' do
 
       describe 'When I click the items name' do
         it 'I should be on the page "/items/:id"' do
-          click_link 'Item Qui Veritatis'
+          within '#items' do
+            first(:link, 'Item Qui Veritatis').click
+          end
 
-          expect(current_path).to eq(item_path(179))
+          expect(current_path).to eq(item_path(1546))
         end
 
         it 'I should see the name of the item, description, and unit price' do
-          click_link 'Item Qui Veritatis'
+          within '#items' do
+            first(:link, 'Item Qui Veritatis').click
+          end
 
           expect(page).to have_content('Item Qui Veritatis')
-          expect(page).to have_content('Description: Totam labore quia harum dicta eum consequatur qui. Corporis inventore consequatur. Illum facilis tempora nihil placeat rerum sint est. Placeat ut aut. Eligendi perspiciatis unde eum sapiente velit.')
-          expect(page).to have_content('Unit Price: 906.17')
+          expect(page).to have_content('Description: Exercitationem aut sunt aliquam et. Illo error id dignissimos. Ut ad omnis nihil eaque et. Reiciendis vero qui animi porro.')
+          expect(page).to have_content('Unit Price: 47.25')
         end
       end
     end
