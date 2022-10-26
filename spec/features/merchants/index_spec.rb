@@ -20,7 +20,7 @@ RSpec.describe 'Merchant Index' do
       it 'I should be on page "/merchants/:id"' do
         click_link 'Schroeder-Jerde'
 
-        expect(current_path).to eq(merchant_path(1)) 
+        expect(current_path).to eq(merchant_path(1))
         expect(page).to have_content('Schroeder-Jerde')
 
         visit merchants_path
@@ -28,11 +28,12 @@ RSpec.describe 'Merchant Index' do
         expect(page).to have_content('Klein, Rempel and Jones')
       end
 
-      xit 'I should see a list of items that merchant sells' do
-        click_link '' #merchant_name link
+      it 'I should see a list of items that merchant sells' do
+        click_link 'Fahey-Stiedemann'
+
         within '#items' do
-          expect(page).to have_content() #item_name
-          expect(page).to have_content() #item_name
+          expect(page).to have_content('Item Excepturi Rem')
+          expect(page).to have_content('Item Illum Minus')
         end
       end
     end
