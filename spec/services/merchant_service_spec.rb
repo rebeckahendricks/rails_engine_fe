@@ -4,7 +4,7 @@ RSpec.describe MerchantService do
   context 'class methods' do
     it 'returns all merchant data', :vcr do
       search = MerchantService.get_merchants
-      
+
       expect(search).to be_a Hash
       expect(search[:data]).to be_an Array
 
