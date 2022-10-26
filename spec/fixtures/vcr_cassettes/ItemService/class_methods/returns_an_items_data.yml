@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/items/1546
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b6b02e459ea64d512428857a507140ec"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d32fa8a2-7e2e-4a2b-9121-015a8996fdf8
+      X-Runtime:
+      - '0.003412'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1546","type":"item","attributes":{"name":"Item Qui Veritatis","description":"Exercitationem
+        aut sunt aliquam et. Illo error id dignissimos. Ut ad omnis nihil eaque et.
+        Reiciendis vero qui animi porro.","unit_price":47.25,"merchant_id":65}}}'
+  recorded_at: Wed, 26 Oct 2022 21:40:24 GMT
+recorded_with: VCR 6.1.0
