@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Merchant Index' do
-  describe 'As a visitor' do
+  describe 'As a visitor', :vcr do
     describe 'When I visit "/merchants"' do
       it 'I should see a list of merchants by name' do
         visit merchants_path
